@@ -106,13 +106,13 @@ public protocol Queueable {
 
 extension SKPlaylist: Playable {
     public func play(completion handler: @escaping SKErrorHandler/* = { _ in }*/) {
-        SPTAudioStreamingController.sharedInstance()?.play(self, completion: handler)
+        SPTAudioStreamingController.sharedInstance().play(self, completion: handler)
     }
 }
 
 extension Playable where Self: Album {
     public func play(completion handler: @escaping SKErrorHandler) {
-        SPTAudioStreamingController.sharedInstance()?.play(self, completion: handler)
+        SPTAudioStreamingController.sharedInstance().play(self, completion: handler)
     }
 }
 
@@ -121,7 +121,7 @@ extension SKSavedAlbum: Playable {}
 
 extension Playable where Self: Track {
     public func play(completion handler: @escaping SKErrorHandler) {
-        SPTAudioStreamingController.sharedInstance()?.play(self, completion: handler)
+        SPTAudioStreamingController.sharedInstance().play(self, completion: handler)
     }
 }
 
@@ -132,7 +132,7 @@ extension SKPlaylistTrack: Playable {}
 
 extension Queueable where Self: Track {
     public func queue(completion handler: @escaping SKErrorHandler) {
-        SPTAudioStreamingController.sharedInstance()?.queue(self, completion: handler)
+        SPTAudioStreamingController.sharedInstance().queue(self, completion: handler)
     }
 }
 

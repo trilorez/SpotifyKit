@@ -917,7 +917,7 @@ extension SKPlaylist {
     ///       - `error`: An error identifying if and why the request failed, or `nil` if the request was successful.
     public static func createPlaylist(named name: String, description: String? = nil, isPublic: Bool = true, isCollaborative: Bool = false, completion handler: @escaping (SKPlaylist?, Error?) -> Void) {
         
-        guard let userID = SPTAuth.defaultInstance()?.session?.canonicalUsername else { // TODO: Remove dependency on iOS SDK classes in the future.
+        guard let userID = SPTAuth.defaultInstance().session?.canonicalUsername else { // TODO: Remove dependency on iOS SDK classes in the future.
             assertionFailure("the 'SPTAuth' default instance session must contain a valid username."); return
         }
         
@@ -1050,7 +1050,7 @@ extension SKPlaylist {
     public func updateImage(with image: UIImage, quality: Float = 0.8, completion handler: @escaping SKErrorHandler) {
     // public func replaceImage(...)
         
-        guard let data = UIImageJPEGRepresentation(image, CGFloat(quality)) else {
+        guard let data = image.jpegData(compressionQuality: CGFloat(quality)) else {
             print("UIImage could not be converted to a JPEG representation."); return
         }
         

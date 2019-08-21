@@ -41,9 +41,10 @@ public enum SKRepeatMode: String, Codable {
     /// - Parameter value: The `SPTRepeatMode` value.
     public init(_ value: SPTRepeatMode) {
         switch value {
-            case .off:     self = .off
-            case .one:     self = .one
-            case .context: self = .all
+            case .off:        self = .off
+            case .one:        self = .one
+            case .context:    self = .all
+            @unknown default: self = .off
         }
     }
 }

@@ -99,8 +99,8 @@ extension SKSearchFieldFilter {
 // MARK: Hashable Conformance
 
 extension SKSearchFieldFilter: Hashable {
-    public var hashValue: Int {
-        return key.hashValue
+    public func hash(into hasher: inout Hasher) {
+        key.hash(into: &hasher)
     }
     
     /// - Note: Filters of the same type will be considered equal even if they contain different associated values.

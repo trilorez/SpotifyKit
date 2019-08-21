@@ -115,7 +115,7 @@ public class SKRequest {
     /// Setting this property with your active `SPTSession` instance ensures your API request is accompanied by the appropriate OAuth access token.
     ///
     /// The default value is the current `session` object referenced by the [SPTAuth](https://spotify.github.io/ios-sdk/Classes/SPTAuth.html) class's default instance.
-    public weak var apiSession: SPTSession? = SPTAuth.defaultInstance()?.session
+    public weak var apiSession: SPTSession? = SPTAuth.defaultInstance().session
     
     /// A tuple value storing multipart request body data and its associated MIME content type.
     internal var body: (data: Data, type: ContentType)? = nil
