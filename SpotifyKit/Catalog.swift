@@ -769,7 +769,7 @@ extension SKUser {
     /// - Parameter page: The parameters for paginating the results, specifying the index and number of items to return. If no parameters are supplied, the request will return the default number of items beginning with first item.
     /// - Returns: An `SKRequest` instance with which to perform the API request.
     public func makePlaylistsRequest(page: Pagination?) -> SKRequest {
-        
+
         var parameters = [String: Any]()
         parameters[Constants.QueryParameters.limit] = page?.limit
         parameters[Constants.QueryParameters.offset] = page?.offset
@@ -831,7 +831,7 @@ extension SKCurrentUser {
     ///
     /// - Parameter page: The parameters for paginating the results, specifying the index and number of items to return. If no parameters are supplied, the request will return the default number of items beginning with first item.
     /// - Returns: An `SKRequest` instance with which to perform the API request.
-    public func makePlaylistsRequest(page: Pagination?) -> SKRequest {
+    public static func makePlaylistsRequest(page: Pagination?) -> SKRequest {
         
         var parameters = [String: Any]()
         parameters[Constants.QueryParameters.limit] = page?.limit
@@ -852,7 +852,7 @@ extension SKCurrentUser {
     ///   - handler: The callback handler for the request. The parameters for this handler are:
     ///       - `user`: The current authenticated user, if available.
     ///       - `error`: An error identifying if and why the request failed, or `nil` if the request was successful.
-    public func getPlaylists(page: Pagination? = nil, completion handler: @escaping (Page<SKPlaylist>?, Error?) -> Void) {
+    public static func getPlaylists(page: Pagination? = nil, completion handler: @escaping (Page<SKPlaylist>?, Error?) -> Void) {
         makePlaylistsRequest(page: page).perform(completion: handler)
     }
 }

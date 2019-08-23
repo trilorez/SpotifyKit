@@ -1021,9 +1021,8 @@ class RequestTests: XCTestCase {
     func testGetPlaylistsForCurrentUser() {
         
         // Arrange:
-        let user = try! SKCurrentUser(from: currentUserData)
         let page = Pagination(limit: 3)
-        let request = user.makePlaylistsRequest(page: page)
+        let request = SKCurrentUser.makePlaylistsRequest(page: page)
         let promise = makeRequestExpectation()
         defer { wait(for: promise) }
         
@@ -1032,7 +1031,7 @@ class RequestTests: XCTestCase {
         SKTAssertQuery(in: request, contains: "limit=3")
         
         // Act:
-        user.getPlaylists(page: page) { (playlists, error) in
+        SKCurrentUser.getPlaylists(page: page) { (playlists, error) in
             defer { promise.fulfill() }
             
             // Assert results:
