@@ -258,6 +258,9 @@ public struct Page<Element: Decodable>: OffsetPagingCollection, JSONDecodable {
 /// - SeeAlso: The Web API [Cursor-Based Paging](https://developer.spotify.com/documentation/web-api/reference/object-model/#cursor-based-paging-object) object.
 public struct CursorPage<Element: CursorPageable & Decodable>: CursorPagingCollection, JSONDecodable {
     
+    // Needed as of Xcode 11.4
+    public typealias Element = Element
+    
     /// The array of items.
     private let items: [Element]
     
