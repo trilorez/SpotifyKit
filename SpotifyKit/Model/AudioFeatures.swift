@@ -209,20 +209,20 @@ extension SKTrackAttribute {
     /// The associated value(s) for the given case, returned as a URL-encodable type.
     internal var values: AttributeRange<URLEncodable> {
         switch self {
-            case let .accousticness(values),
-                 let .danceability(values),
-                 let .energy(values),
-                 let .instrumentalness(values),
-                 let .liveness(values),
-                 let .loudness(values),
-                 let .speechiness(values),
-                 let .tempo(values),
-                 let .valence(values): return (min: values.min, max: values.max, target: values.target) // return values
-            case let .popularity(values),
-                 let .timeSignature(values): return (min: values.min, max: values.max, target: values.target) // return values
-            case let .duration(values): return (min: values.min, max: values.max, target: values.target) // return values
-            case let .key(values): return (min: values.min, max: values.max, target: values.target) // return values
-            case let .mode(values): return (min: values.min, max: values.max, target: values.target) // return values
+            case let .accousticness(min, max, target),
+                 let .danceability(min, max, target),
+                 let .energy(min, max, target),
+                 let .instrumentalness(min, max, target),
+                 let .liveness(min, max, target),
+                 let .loudness(min, max, target),
+                 let .speechiness(min, max, target),
+                 let .tempo(min, max, target),
+                 let .valence(min, max, target): return (min: min, max: max, target: target) // return values
+            case let .popularity(min, max, target),
+                 let .timeSignature(min, max, target): return (min: min, max: max, target: target) // return values
+            case let .duration(min, max, target): return (min: min, max: max, target: target) // return values
+            case let .key(min, max, target): return (min: min, max: max, target: target) // return values
+            case let .mode(min, max, target): return (min: min, max: max, target: target) // return values
         }
     }
 }
