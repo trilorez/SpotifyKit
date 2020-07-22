@@ -164,22 +164,22 @@ public struct SKTrack: Track, JSONDecodable {
         }
     }
     
-    public let artists: [SKArtist]
+    @PermissiveDecode public var artists: [SKArtist]
     public let availableMarkets: [String]?
     public let discNumber: Int
     public let externalURLs: [String: URL]
-    public let id: String
+    @PermissiveDecode public var id: String
     public let isPlayable: Bool?
     public let name: String
     public let previewURL: URL?
     public let trackLinks: SKTrackLinks?
     public let trackNumber: Int
     public let uri: String
-    public let url: URL
+    @PermissiveDecode public var url: URL
     
     // MARK: Full Track Properties
     
-    public let album: SKAlbum?
+    @PermissiveDecode public var album: SKAlbum?
     public let externalIDs: [String: String]?
     public let popularity: Int?
 
@@ -205,6 +205,27 @@ public struct SKTrack: Track, JSONDecodable {
         case type
         case uri
     }
+
+//    public init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        // Spotify returns null for required fields sometimes, hooray
+//        album = try? container.decodeIfPresent(SKAlbum.self, forKey: .album)
+//        artists = (try? container.decode([SKArtist].self, forKey: .artists)) ?? []
+//
+//        availableMarkets = try container.decodeIfPresent([String].self, forKey: .availableMarkets)
+//        discNumber = try container.decode(Int.self, forKey: .discNumber)
+//        _duration = try container.decode(Int.self, forKey: ._duration)
+//        _isExplicit = try container.decodeIfPresent(Bool.self, forKey: ._isExplicit)
+//        externalIDs = try container.decodeIfPresent([String: String].self, forKey: .externalIDs)
+//        externalURLs = try container.decode([String: URL]?, forKey: .externalURLs)
+//        id = try container.decode(String.self, forKey: .id)
+//        isPlayable = try container.decodeIfPresent(Bool.self, forKey: .isPlayable)
+//        name = try container.decode(String.self, forKey: .name)
+//        previewURL = try container.decodeIfPresent(URL.self, forKey: .previewURL)
+//
+//        type = try container.decode(ResourceType, forKey: .type)
+//    }
 }
 
 // MARK: Expandable Conformance

@@ -56,6 +56,7 @@
 		11EE38FF1FB08AC8002349B7 /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE38FE1FB08AC8002349B7 /* Streaming.swift */; };
 		11F196271F28954B007D3718 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F196261F28954B007D3718 /* Category.swift */; };
 		11F196291F289CFA007D3718 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F196281F289CFA007D3718 /* Category.swift */; };
+		65501D9C24C7EC3D00C3A406 /* PermissiveDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65501D9B24C7EC3D00C3A406 /* PermissiveDecode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		11F196261F28954B007D3718 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		11F196281F289CFA007D3718 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		11FB6D8F1F20D33500ADAA90 /* modulemaps.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = modulemaps.sh; sourceTree = "<group>"; };
+		65501D9B24C7EC3D00C3A406 /* PermissiveDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissiveDecode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				1122F9B91F24A23D00A9AD89 /* Followers.swift */,
 				119DC3CF1F23948F003DB3BD /* Image.swift */,
 				119DC3D31F239A92003DB3BD /* Paging.swift */,
+				65501D9B24C7EC3D00C3A406 /* PermissiveDecode.swift */,
 				113C5F6C1F26C235005D1DC6 /* Playlist.swift */,
 				11EC8A011F2DE2340066A5F0 /* Recommendations.swift */,
 				117FFD941F7229E100C76833 /* SearchResults.swift */,
@@ -462,6 +465,7 @@
 				113C5F731F26CB37005D1DC6 /* User.swift in Sources */,
 				11E001F21F491D800045A502 /* Device.swift in Sources */,
 				119DC3D01F23948F003DB3BD /* Image.swift in Sources */,
+				65501D9C24C7EC3D00C3A406 /* PermissiveDecode.swift in Sources */,
 				114A0F6A1F6E9C18009E652C /* Catalog.swift in Sources */,
 				113C5F6D1F26C235005D1DC6 /* Playlist.swift in Sources */,
 				116EE39A1F3FCA0B006F9520 /* URLEncodable.swift in Sources */,
