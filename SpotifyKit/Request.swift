@@ -219,8 +219,9 @@ public class SKRequest {
     ///   - endpoint: The destination endpoint for this API request, relative to the Web API base URL (`https://api.spotify.com`).
     ///   - parameters: The parameters to send along with the API request, if any. The values are encoded as a URL query string and appended to the destination URL.
     public convenience init?(method: HTTPMethod, endpoint: String, parameters: [String: Any] = [:]) {
-        
-        guard let url = URL(string: endpoint, relativeTo: Constants.baseURL) else { return nil }
+
+        guard let encoded = endpoint.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+              let url = URL(string: encoded, relativeTo: Constants.baseURL) else { return nil }
         
         self.init(method: method, url: url, parameters: parameters)
     }
